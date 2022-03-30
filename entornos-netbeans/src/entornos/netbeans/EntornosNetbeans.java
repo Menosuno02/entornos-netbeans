@@ -13,13 +13,15 @@ public class EntornosNetbeans {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int[] num = new int[10];
-        int numIntroducido;
+        int numIntroducido, sizeArray;
         boolean introducido;
         Scanner sc = new Scanner(System.in);
+        do {
+            System.out.println("Introduce tamaño array (max 10)");
+            sizeArray = sc.nextInt();
+        } while (sizeArray < 1 || sizeArray > 10);
+        int[] num = new int[sizeArray];
         for (int i = 0; i <= num.length - 1; i++) {
-            System.out.println("Introduce número");
-            num[i] = sc.nextInt();
             do {
                 introducido = false;
                 System.out.println("Introduce número " + (i + 1));
