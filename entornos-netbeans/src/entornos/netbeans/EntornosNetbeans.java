@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author administrador
+ * @author Menosuno02 (Alejandro López)
  */
 public class EntornosNetbeans {
 
@@ -31,6 +31,14 @@ public class EntornosNetbeans {
         Arrays.sort(num);
     }
 
+    /**
+     * Checks if a certain number already exists in an array
+     *
+     * @param num requested number to introduce
+     * @param arr array of numbers
+     * @param total numbers introduced
+     * @return true if the number already exists the array, false if not
+     */
     public static boolean inArray(int num, int[] arr, int total) {
         if (total == 0) {
             return false;
@@ -43,6 +51,12 @@ public class EntornosNetbeans {
         return false;
     }
 
+    /**
+     * Checks if the value introduced for the size of the array is valid
+     *
+     * @param sizeArray wanted size for the array
+     * @return true if the size is valid, false if not
+     */
     public static boolean valSizeArray(int sizeArray) {
         return (sizeArray >= 1 && sizeArray <= 10);
     }
