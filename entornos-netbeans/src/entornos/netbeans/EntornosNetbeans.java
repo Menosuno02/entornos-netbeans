@@ -13,8 +13,7 @@ public class EntornosNetbeans {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int numIntroducido, sizeArray;
-        boolean introducido;
+        int numIntroducido, sizeArray, numTotal = 0;
         Scanner sc = new Scanner(System.in);
         do {
             System.out.println("Introduce tamaño array (max 10)");
@@ -23,17 +22,24 @@ public class EntornosNetbeans {
         int[] num = new int[sizeArray];
         for (int i = 0; i <= num.length - 1; i++) {
             do {
-                introducido = false;
                 System.out.println("Introduce número " + (i + 1));
                 numIntroducido = sc.nextInt();
-                for (int j = 0; j <= i - 1; j++) {
-                    if (numIntroducido == num[j]) {
-                        introducido = true;
-                    }
-                }
-            } while (introducido);
+            } while (inArray(numIntroducido, num, numTotal));
             num[i] = numIntroducido;
+            numTotal++;
         }
         Arrays.sort(num);
+    }
+
+    public static boolean inArray(int num, int[] arr, int total) {
+        if (total == 0) {
+            return false;
+        }
+        for (int i = 0; i <= total - 1; i++) {
+            if (num == arr[i]) {
+                return true;
+            }
+        }
+        return false;
     }
 }
