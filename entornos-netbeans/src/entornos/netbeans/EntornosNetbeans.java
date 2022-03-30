@@ -19,7 +19,7 @@ public class EntornosNetbeans {
         do {
             System.out.println("Introduce tamaño array (max 10)");
             sizeArray = sc.nextInt();
-        } while (sizeArray < 1 || sizeArray > 10);
+        } while (!valSizeArray(sizeArray));
         int[] num = new int[sizeArray];
         for (int i = 0; i <= num.length - 1; i++) {
             do {
@@ -35,5 +35,9 @@ public class EntornosNetbeans {
             num[i] = numIntroducido;
         }
         Arrays.sort(num);
+    }
+
+    public static boolean valSizeArray(int sizeArray) {
+        return (sizeArray >= 1 && sizeArray <= 10);
     }
 }
